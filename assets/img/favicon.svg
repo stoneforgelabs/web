@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Wordmark-derived only: brand guideline says never draw a logo. -->
+  <defs>
+    <linearGradient id="ember" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff802e"/>
+      <stop offset="1" stop-color="#e8481a"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#ember)"/>
+  <text x="32" y="45" text-anchor="middle"
+        font-family="'Space Grotesk',ui-sans-serif,system-ui,sans-serif"
+        font-size="38" font-weight="700" letter-spacing="-1" fill="#16130f">S</text>
+</svg>

@@ -1,0 +1,134 @@
+/* StoneForge Labs — design tokens
+ * Zdroj pravdy: Claude Design projekt "StoneForge Labs Design System"
+ * (2ff3b700-3d3a-44a7-b9a9-2ac18126149e), soubory tokens/*.css.
+ * Když se změní tam, přenes změnu sem — jinak se web a design systém rozejdou.
+ */
+
+/* ---------- colors ---------- */
+:root {
+  /* Stone — neutral ramp (dark-first; sampled from Forge Logger dashboard) */
+  --stone-950: #0d0e11; --stone-900: #111216; --stone-850: #15161a;
+  --stone-800: #1b1d22; --stone-750: #1e2026; --stone-700: #24262d;
+  --stone-600: #2e313a; --stone-500: #4a4e59; --stone-400: #6d7280;
+  --stone-300: #9aa0ad; --stone-200: #c6cad4; --stone-100: #e8eaef;
+  --stone-50:  #faf9f7;
+
+  /* Ember — brand accent (anvil mark gradient + ff6a2c badge) */
+  --ember-300: #ffa05e; --ember-400: #ff802e; --ember-500: #ff6a2c;
+  --ember-600: #ff5b23; --ember-700: #e8481a; --ember-800: #c23a14;
+  --ember-glow: rgba(255, 106, 44, .25);
+
+  /* Materials — Marble Mill eras (copper C · silver G · gold D · diamond A) */
+  --mat-copper: #c47a3d; --mat-silver: #c9ccd3;
+  --mat-gold:   #e3b341; --mat-diamond: #9be0ef;
+
+  /* Semantic — dark theme */
+  --bg: var(--stone-900);
+  --bg-sunken: var(--stone-950);
+  --bg-raised: var(--stone-850);
+  --surface-card: var(--stone-800);
+  --surface-overlay: #22242b;
+  --surface-hover: rgba(255, 255, 255, .04);
+  --border-subtle: rgba(255, 255, 255, .07);
+  --border-strong: rgba(255, 255, 255, .14);
+  --text-1: #f2f3f5; --text-2: #b6bac4; --text-3: #7d8290;
+  --text-on-accent: #16130f;
+  --accent: var(--ember-500);
+  --accent-hover: var(--ember-400);
+  --accent-press: var(--ember-600);
+  --accent-soft: rgba(255, 106, 44, .12);
+  --link: var(--ember-400);
+  --link-hover: var(--ember-300);
+  --focus-ring: 0 0 0 3px rgba(255, 106, 44, .35);
+  color-scheme: dark;
+}
+
+/* ---------- typography ---------- */
+:root {
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+  --text-xs: 12px; --text-sm: 13px; --text-base: 15px; --text-md: 17px;
+  --text-lg: 20px; --text-xl: 25px; --text-2xl: 32px; --text-3xl: 44px;
+  --text-4xl: 60px;
+  --leading-tight: 1.1; --leading-snug: 1.3; --leading-body: 1.6;
+  --track-display: -0.02em; --track-label: 0.08em;
+  --weight-body: 500; --weight-semibold: 600; --weight-bold: 700;
+  --weight-display: 700;
+}
+
+/* ---------- spacing ---------- */
+:root {
+  --sp-05: 2px; --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 48px;
+  --sp-14: 56px; --sp-16: 64px; --sp-18: 72px; --sp-20: 80px; --sp-24: 96px;
+  --container: 1200px;
+  --container-narrow: 760px;
+  --gutter: 32px;
+}
+
+/* ---------- effects ---------- */
+:root {
+  --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-xl: 20px; --r-full: 999px;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
+  --shadow-overlay: 0 8px 40px rgba(0, 0, 0, .5);
+  --shadow-ember: 0 6px 24px var(--ember-glow);
+  --ease-out: cubic-bezier(.22, .9, .35, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+}
+
+/* ---------- base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-body);
+  color: var(--text-1);
+  background: var(--bg);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: var(--track-display);
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-display);
+  margin: 0;
+}
+
+p { margin: 0; }
+
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); }
+
+code, kbd { font-family: var(--font-mono); }
+
+img, svg { max-width: 100%; }
+img { height: auto; }
+
+.ds-label {
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.ds-num {
+  font-family: var(--font-mono);
+  font-feature-settings: 'tnum';
+}
+
+::selection { background: var(--ember-600); color: #fff; }
+:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
