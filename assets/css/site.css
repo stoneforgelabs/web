@@ -63,14 +63,22 @@
 .footer__inner {
   max-width: var(--container); margin: 0 auto;
   padding: var(--gutter);
-  display: flex; align-items: center; gap: var(--sp-6); flex-wrap: wrap;
+  display: flex; align-items: flex-start; gap: var(--sp-6) var(--sp-10);
+  flex-wrap: wrap;
   font-size: var(--text-sm); color: var(--text-3);
+}
+.footer__brandcol {
+  display: flex; flex-direction: column; gap: 2px;
+  margin-right: auto;
 }
 .footer__brand {
   font-family: var(--font-display); font-weight: var(--weight-bold);
   color: var(--text-2);
 }
-.footer__spacer { flex: 1; }
+.footer__links {
+  display: flex; flex-direction: column; gap: var(--sp-2);
+  align-items: flex-start;
+}
 
 /* ============ button ============ */
 .btn {
@@ -278,7 +286,6 @@
   .tool__shot { border-left: 0; border-top: 1px solid var(--border-subtle); }
   .hero__inner { padding-top: var(--sp-16); padding-bottom: var(--sp-12); }
   .section { padding-top: var(--sp-12); }
-  .footer__spacer { display: none; }
   .footer__inner { gap: var(--sp-3) var(--sp-5); }
 }
 
