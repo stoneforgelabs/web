@@ -1,0 +1,13 @@
+{
+  "_note": "Kdy se který klip dostal do větve (UTC) — scripts/make_clips.py podle toho drží klipy návrhů, které čekají na schválení.",
+  "files": {
+    "first-era-9x16-1080x1920.mp4": "2026-09-25T12:27:39Z",
+    "first-era-9x16-1080x1920.sheet.png": "2026-09-25T12:27:39Z",
+    "follow-the-swarm-16x9-1920x1080.mp4": "2026-09-25T12:27:39Z",
+    "follow-the-swarm-16x9-1920x1080.sheet.png": "2026-09-25T12:27:39Z",
+    "peak-diamond-9x16-1080x1920.mp4": "2026-09-25T12:27:39Z",
+    "peak-diamond-9x16-1080x1920.sheet.png": "2026-09-25T12:27:39Z",
+    "peak-gold-9x16-1080x1920.mp4": "2026-09-25T12:27:39Z",
+    "peak-gold-9x16-1080x1920.sheet.png": "2026-09-25T12:27:39Z"
+  }
+}
