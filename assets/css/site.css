@@ -264,7 +264,7 @@
 .game .actions { margin-top: 14px; }
 
 /* jediná karta: obrázek vlevo, text vpravo, aby panel nebyl poloprázdný */
-.cards--single { grid-template-columns: minmax(0, 1fr); }
+.cards--single { grid-template-columns: minmax(0, 1fr); flex: 1; align-content: center; }
 .cards--single .game {
   display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 24px; align-items: center;
@@ -311,6 +311,18 @@
 .spotlight__link:hover svg { transform: translateX(3px); }
 @media (min-width: 1200px) {
   .spotlight__art { aspect-ratio: 2.2 / 1; }
+}
+/* spotlight sám (bez panelu vlevo): obrázek vlevo, text vpravo — ne obří obrázek přes celou šířku */
+@media (min-width: 600px) {
+  .lower--solo .spotlight {
+    display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    grid-template-areas: "head head" "media body";
+    gap: 0 28px; align-items: center;
+  }
+  .lower--solo .spotlight__head { grid-area: head; }
+  .lower--solo .spotlight__media { grid-area: media; }
+  .lower--solo .spotlight__body { grid-area: body; }
+  .lower--solo .spotlight__art { aspect-ratio: 16 / 9; }
 }
 
 /* ============ lab steps (panel s jedinou kartou) ============ */
