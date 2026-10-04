@@ -1,45 +1,32 @@
-/* StoneForge Labs — design tokens
- * Zdroj pravdy: Claude Design projekt "StoneForge Labs Design System"
- * (2ff3b700-3d3a-44a7-b9a9-2ac18126149e), soubory tokens/*.css.
- * Když se změní tam, přenes změnu sem — jinak se web a design systém rozejdou.
+/* StoneForge Labs — design tokens webu (směr „Arcade Lab 07“, říjen 2026)
+ *
+ * Web se tímhle vědomě odchýlil od Claude Design projektu „StoneForge Labs
+ * Design System“ (2ff3b700-3d3a-44a7-b9a9-2ac18126149e): paleta, poloměry
+ * a akcenty jsou ze schváleného podkladu Arcade Lab 07 (tmavá navy, levandulová,
+ * limetková pro Play). Písma zůstávají z design systému. Viz web/README.md.
  */
 
 /* ---------- colors ---------- */
 :root {
-  /* Stone — neutral ramp (dark-first; sampled from Forge Logger dashboard) */
-  --stone-950: #0d0e11; --stone-900: #111216; --stone-850: #15161a;
-  --stone-800: #1b1d22; --stone-750: #1e2026; --stone-700: #24262d;
-  --stone-600: #2e313a; --stone-500: #4a4e59; --stone-400: #6d7280;
-  --stone-300: #9aa0ad; --stone-200: #c6cad4; --stone-100: #e8eaef;
-  --stone-50:  #faf9f7;
+  --sf-bg: #0b1020;
+  --sf-rail: #0d1122;
+  --sf-surface: #11172b;
+  --sf-surface-hover: #1a2240;
+  --sf-sunken: #080c18;
+  --sf-text: #f4f3ff;
+  --sf-text-secondary: #bab7da;
+  --sf-text-muted: #8f8cb3;
+  --sf-lavender: #b8a5ff;
+  --sf-play: #c7f65b;
+  --sf-play-hover: #d4fa7c;
+  --sf-on-play: #11170a;
+  --sf-border: #444568;
+  --sf-border-subtle: #2a2e4d;
 
-  /* Ember — brand accent (anvil mark gradient + ff6a2c badge) */
-  --ember-300: #ffa05e; --ember-400: #ff802e; --ember-500: #ff6a2c;
-  --ember-600: #ff5b23; --ember-700: #e8481a; --ember-800: #c23a14;
-  --ember-glow: rgba(255, 106, 44, .25);
-
-  /* Materials — Marble Mill eras (copper C · silver G · gold D · diamond A) */
+  /* Marble Mill — barvy ér (copper C · silver G · gold D · diamond A) */
   --mat-copper: #c47a3d; --mat-silver: #c9ccd3;
-  --mat-gold:   #e3b341; --mat-diamond: #9be0ef;
+  --mat-gold: #e3b341; --mat-diamond: #9be0ef;
 
-  /* Semantic — dark theme */
-  --bg: var(--stone-900);
-  --bg-sunken: var(--stone-950);
-  --bg-raised: var(--stone-850);
-  --surface-card: var(--stone-800);
-  --surface-overlay: #22242b;
-  --surface-hover: rgba(255, 255, 255, .04);
-  --border-subtle: rgba(255, 255, 255, .07);
-  --border-strong: rgba(255, 255, 255, .14);
-  --text-1: #f2f3f5; --text-2: #b6bac4; --text-3: #7d8290;
-  --text-on-accent: #16130f;
-  --accent: var(--ember-500);
-  --accent-hover: var(--ember-400);
-  --accent-press: var(--ember-600);
-  --accent-soft: rgba(255, 106, 44, .12);
-  --link: var(--ember-400);
-  --link-hover: var(--ember-300);
-  --focus-ring: 0 0 0 3px rgba(255, 106, 44, .35);
   color-scheme: dark;
 }
 
@@ -48,87 +35,66 @@
   --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
   --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
-  --text-xs: 12px; --text-sm: 13px; --text-base: 15px; --text-md: 17px;
-  --text-lg: 20px; --text-xl: 25px; --text-2xl: 32px; --text-3xl: 44px;
-  --text-4xl: 60px;
-  --leading-tight: 1.1; --leading-snug: 1.3; --leading-body: 1.6;
-  --track-display: -0.02em; --track-label: 0.08em;
-  --weight-body: 500; --weight-semibold: 600; --weight-bold: 700;
-  --weight-display: 700;
 }
 
-/* ---------- spacing ---------- */
+/* ---------- layout & effects ---------- */
 :root {
-  --sp-05: 2px; --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
-  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 48px;
-  --sp-14: 56px; --sp-16: 64px; --sp-18: 72px; --sp-20: 80px; --sp-24: 96px;
-  --container: 1200px;
-  --container-narrow: 760px;
-  --gutter: 32px;
+  --sf-rail-width: 224px;
+  --sf-content-max: 1440px;
+  --sf-pad: 32px;
+  --sf-gap: 16px;
+  --sf-radius-panel: 16px;
+  --sf-radius-card: 12px;
+  --sf-radius-control: 10px;
+  --sf-duration: 160ms;
+  --sf-ease: cubic-bezier(.22, .9, .35, 1);
+  --sf-focus: 0 0 0 3px var(--sf-bg), 0 0 0 5px var(--sf-play);
 }
 
-/* ---------- effects ---------- */
-:root {
-  --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-xl: 20px; --r-full: 999px;
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
-  --shadow-overlay: 0 8px 40px rgba(0, 0, 0, .5);
-  --shadow-ember: 0 6px 24px var(--ember-glow);
-  --ease-out: cubic-bezier(.22, .9, .35, 1);
-  --dur-fast: 120ms;
-  --dur-base: 200ms;
+@media (prefers-reduced-motion: reduce) {
+  :root { --sf-duration: 0ms; }
+  html { scroll-behavior: auto !important; }
 }
 
 /* ---------- base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
+
 body {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  font-weight: var(--weight-body);
-  line-height: var(--leading-body);
-  color: var(--text-1);
-  background: var(--bg);
   margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--sf-text);
+  background: var(--sf-bg);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  letter-spacing: var(--track-display);
-  line-height: var(--leading-tight);
-  font-weight: var(--weight-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
   margin: 0;
 }
 
 p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
 
-a { color: var(--link); text-decoration: none; }
-a:hover { color: var(--link-hover); }
-
-code, kbd { font-family: var(--font-mono); }
+a { color: var(--sf-lavender); text-decoration: none; }
+a:hover { color: var(--sf-text); }
 
 img, svg { max-width: 100%; }
-img { height: auto; }
+img { height: auto; display: block; }
 
-.ds-label {
-  font-size: 11px;
-  font-weight: var(--weight-bold);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  color: var(--text-3);
-}
+::selection { background: var(--sf-lavender); color: var(--sf-bg); }
+:focus { outline: none; }
+:focus-visible { outline: none; box-shadow: var(--sf-focus); border-radius: 6px; }
 
-.ds-num {
-  font-family: var(--font-mono);
-  font-feature-settings: 'tnum';
-}
-
-::selection { background: var(--ember-600); color: #fff; }
-:focus-visible { outline: none; box-shadow: var(--focus-ring); }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-  }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }

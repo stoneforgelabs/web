@@ -3,165 +3,160 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>StoneForge Labs — games and tools, forged small</title>
-<meta name="description" content="StoneForge Labs is an independent game studio in Czechia. We make small, finished games — and the playtesting tools we wished existed while making them.">
+<title>StoneForge Labs — play the experiments</title>
+<meta name="description" content="StoneForge Labs is an independent game studio in Czechia. Play our small game experiments, tell us what works, and follow the ones growing into full games.">
 <link rel="canonical" href="https://stoneforgelabs.games/">
-<meta name="theme-color" content="#111216">
+<meta name="theme-color" content="#0b1020">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="StoneForge Labs">
-<meta property="og:title" content="StoneForge Labs — games and tools, forged small">
-<meta property="og:description" content="Small, finished games — and the playtesting tools we wished existed while making them.">
+<meta property="og:title" content="StoneForge Labs — play the experiments, shape what comes next">
+<meta property="og:description" content="Small game experiments you can play now. Some grow into full games.">
 <meta property="og:url" content="https://stoneforgelabs.games/">
-<meta property="og:image" content="https://stoneforgelabs.games/assets/img/marble-mill-og.jpg">
+<meta property="og:image" content="https://stoneforgelabs.games/assets/img/lethal-geometry-og.jpg">
 <meta property="og:image:width" content="1232">
 <meta property="og:image:height" content="706">
-<meta property="og:image:alt" content="Marble Mill — capsule art">
+<meta property="og:image:alt" content="Lethal Geometry — a laser beam bent by mirrors">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/menu.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<nav class="nav">
-  <div class="nav__inner">
-    <a class="nav__brand" href="/">StoneForge Labs</a>
-    <a class="nav__link" href="/" aria-current="page">Studio</a>
-    <a class="nav__link" href="marble-mill.html">Marble Mill</a>
-    <a class="nav__link nav__link--accent" href="https://forgelogger.dev" target="_blank" rel="noopener noreferrer">
-      Forge Logger
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>
-    </a>
-    <a class="nav__link" href="mailto:hello@stoneforgelabs.games">Contact</a>
+<div class="shell">
+
+<!-- build_web:rail -->
+<header class="rail">
+  <div class="rail__bar">
+    <a class="brand" href="#top"><span class="brand__name">StoneForge</span><span class="brand__labs">Labs</span></a>
+    <button class="rail__toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg><span>Menu</span></button>
   </div>
-</nav>
+  <nav class="rail__nav" id="site-nav" aria-label="Main">
+    <ul class="rail__list">
+      <li><a class="rail__link" href="#top" aria-current="page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11h4"/><path d="M8 9v4"/><path d="M15 12h.01"/><path d="M18 10h.01"/><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.59C2.6 9.42 2 14.46 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.41-1.41A2 2 0 0 1 9.83 16h4.34a2 2 0 0 1 1.41.59L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.55-.6-6.58-.69-7.26A4 4 0 0 0 17.32 5z"/></svg><span>Explore</span></a></li><li><a class="rail__link" href="#play"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.07-10.13A2 2 0 0 1 14 9.53V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg><span>Playable experiments</span></a></li><li><a class="rail__link" href="#development"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg><span>In development</span></a></li><li><a class="rail__link" href="#about"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>About</span></a></li>
+    </ul>
+    <a class="rail__tool" href="https://forgelogger.dev" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 11 2-2-2-2"/><path d="M11 13h4"/><rect width="18" height="18" x="3" y="3" rx="2"/></svg><span>Forge Logger</span><svg class="rail__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg><span class="sr-only"> (playtest tool, opens in a new tab)</span></a>
+  </nav>
+</header>
+<!-- /build_web:rail -->
 
-<main id="main">
+<div class="main-col">
+<main id="main" class="main">
 
-  <section class="hero">
-    <div class="hero__inner">
-      <div class="ds-label hero__eyebrow">Independent game studio · Czechia</div>
-      <h1>Games and tools, forged small.</h1>
-      <p class="hero__lede">StoneForge Labs makes small, finished games — and the playtesting tools we wished existed while making them.</p>
-      <div class="hero__actions">
-        <a class="btn btn--primary btn--lg" href="marble-mill.html">
-          See Marble Mill
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="btn btn--secondary btn--lg" href="https://forgelogger.dev" target="_blank" rel="noopener noreferrer">
-          Forge Logger
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>
-        </a>
-      </div>
+  <section class="intro" id="top" aria-labelledby="intro-title">
+    <div class="intro__grid" aria-hidden="true">
+      <p class="intro__steps">Ideas<br>Playtests<br>Feedback<br>Bigger games</p>
     </div>
+    <h1 class="intro__title" id="intro-title"><span>Play the experiments.</span> <span class="intro__accent">Shape what comes next.</span></h1>
+    <p class="intro__lede">Small ideas. Some grow into full games.</p>
   </section>
 
-  <section class="wrap section" style="padding-top:24px">
-    <div class="section-head">
-      <h2 id="games">Games</h2>
-      <span class="section-note">short by design — they end, on purpose</span>
-    </div>
-    <div class="grid-2">
+<!-- build_web:featured -->
+<section class="feature" id="play" aria-labelledby="feature-title">
+  <img class="feature__art" src="assets/img/games/lethal-geometry-wide-1600.webp" srcset="assets/img/games/lethal-geometry-wide-960.webp 960w, assets/img/games/lethal-geometry-wide-1600.webp 1600w, assets/img/games/lethal-geometry-wide-2400.webp 2400w" sizes="(min-width: 1200px) min(1440px, calc(100vw - 288px)), (min-width: 900px) calc(100vw - 240px), 100vw" width="1600" height="517" alt="Lethal Geometry gameplay: a laser beam split by mirrors burns through a column of enemies on a dark grid" fetchpriority="high">
+  <div class="feature__copy">
+    <p class="chip chip--play"><span class="chip__dot" aria-hidden="true"></span><span>Playable demo<span aria-hidden="true"> · </span>In development</span></p>
+    <h2 class="feature__title" id="feature-title">Lethal Geometry</h2>
+    <p class="feature__tagline">A tower defense without towers. One laser, a machine of mirrors.</p>
+    <div class="actions"><a class="btn btn--play" href="https://stoneforgelabs.itch.io/lethal-geometry" target="_blank" rel="noopener noreferrer"><svg class="btn__glyph" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z" fill="currentColor"/></svg>Play demo<span class="sr-only"> of Lethal Geometry on itch.io</span></a><a class="btn btn--outline" href="https://store.steampowered.com/app/5325830/Lethal_Geometry/" target="_blank" rel="noopener noreferrer">Wishlist on Steam<span class="sr-only">: Lethal Geometry</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a><a class="textlink" href="mailto:hello@stoneforgelabs.games?subject=Feedback%3A%20Lethal%20Geometry">Leave feedback<span class="sr-only"> on Lethal Geometry by e-mail</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a></div>
+  </div>
+</section>
+<!-- /build_web:featured -->
 
-      <a class="card card--flush card--interactive" href="marble-mill.html">
-        <img class="gamecard__art"
-             src="assets/img/marble-mill-header.webp"
-             alt="Marble Mill capsule art" width="920" height="430" loading="lazy">
-        <div class="card__body">
-          <div class="gamecard__titlerow">
-            <h3>Marble Mill</h3>
-            <span class="badge badge--ember">Q4 2026</span>
-          </div>
-          <p class="gamecard__text">An idle game where every coin is a real collision. ~3 hours to a real ending — then an endless sandbox.</p>
-          <div class="row row--tight">
-            <span class="tag">Cozy</span>
-            <span class="tag">Idler</span>
-            <span class="tag">Physics</span>
-            <span class="tag">Short</span>
-          </div>
-        </div>
-      </a>
-
-      <div class="card card--flush">
-        <div class="gamecard__placeholder">
-          <span class="gamecard__wordmark">Ballfall</span>
-          <span style="font-size:12px;color:var(--text-3)">no art yet — on purpose</span>
-        </div>
-        <div class="card__body">
-          <div class="gamecard__titlerow">
-            <h3>Ballfall</h3>
-            <span class="badge badge--neutral badge--outline">In the forge</span>
-          </div>
-          <p class="gamecard__text gamecard__text--last">Marble Mill's mill builds itself. In Ballfall you build your own — marble by marble.</p>
-        </div>
+<!-- build_web:lower -->
+<div class="lower">
+<section class="panel more" aria-labelledby="more-title">
+  <div class="panel__head">
+    <h2 class="panel__title" id="more-title">Next in the lab</h2>
+    
+  </div>
+  <div class="cards cards--single">
+    <article class="game">
+      <div class="game__media">
+        <img class="game__art" src="assets/img/games/crumbworks-1280.webp" srcset="assets/img/games/crumbworks-640.webp 640w, assets/img/games/crumbworks-1280.webp 1280w" sizes="(min-width: 1200px) 420px, (min-width: 600px) 45vw, 100vw" width="1280" height="720" alt="Crumbworks: a tiny janitor sweeps crumbs between the keys of a giant keyboard" loading="lazy" decoding="async">
+        <p class="chip chip--dev chip--onimage"><span class="chip__dot" aria-hidden="true"></span><span>Experiment<span aria-hidden="true"> · </span>Not playable yet</span></p>
       </div>
-
+      <div class="game__body">
+        <h3 class="game__title">Crumbworks</h3>
+        <p class="game__tagline">Sweep the crumbs off a giant keyboard as a tiny, very serious janitor while its owner keeps typing.</p>
+        
+      </div>
+    </article>
+  </div>
+  <ol class="lab-steps" aria-label="How the lab works">
+    <li><span class="lab-steps__n" aria-hidden="true">01</span><span><strong>Play</strong> a free demo.</span></li>
+    <li><span class="lab-steps__n" aria-hidden="true">02</span><span><strong>Tell us</strong> what works and what doesn't.</span></li>
+    <li><span class="lab-steps__n" aria-hidden="true">03</span><span><strong>Grow.</strong> The ones that click become full games.</span></li>
+  </ol>
+</section>
+<section class="panel spotlight" id="development" aria-labelledby="spotlight-title">
+  <div class="spotlight__head">
+    <p class="eyebrow">Beyond the experiment</p>
+    <h2 class="panel__title" id="spotlight-title">Growing into a full game</h2>
+    <p class="panel__lede">Some experiments grow. This one is heading to Steam.</p>
+  </div>
+  <div class="spotlight__media">
+    <img class="spotlight__art" src="assets/img/games/marble-mill-rings-1280.webp" srcset="assets/img/games/marble-mill-rings-640.webp 640w, assets/img/games/marble-mill-rings-1280.webp 1280w" sizes="(min-width: 1200px) 440px, (min-width: 900px) 50vw, 100vw" width="1280" height="720" alt="Marble Mill: golden marbles circling the rings of the mill" loading="lazy" decoding="async">
+  </div>
+  <div class="spotlight__body">
+    <div class="spotlight__titlerow">
+      <h3 class="game__title"><a class="spotlight__link" href="marble-mill.html">Marble Mill<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span class="sr-only"> — about the game</span></a></h3>
+      <p class="chip chip--dev"><span class="chip__dot" aria-hidden="true"></span><span>In development</span></p>
     </div>
-  </section>
+    <p class="game__tagline">An idle game that ends. Every coin is a real collision.</p>
+    <div class="actions"><a class="btn btn--play" href="https://stoneforgelabs.itch.io/marble-mill" target="_blank" rel="noopener noreferrer"><svg class="btn__glyph" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z" fill="currentColor"/></svg>Play demo<span class="sr-only"> of Marble Mill on itch.io</span></a><a class="btn btn--outline" href="https://store.steampowered.com/app/5077600/Marble_Mill/" target="_blank" rel="noopener noreferrer">Wishlist on Steam<span class="sr-only">: Marble Mill</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></div>
+  </div>
+</section>
+</div>
+<!-- /build_web:lower -->
 
-  <section class="wrap section">
-    <div class="section-head">
-      <h2 id="tools">Tools</h2>
-      <span class="section-note">built for our playtests, free for yours</span>
+<!-- build_web:catalog -->
+<!-- /build_web:catalog -->
+
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="about__copy">
+      <h2 id="about-title">An open lab for small games</h2>
+      <p>StoneForge Labs is an independent game studio in Czechia. We put small playable ideas out early, listen to the people who play them, and keep building the ones that click.</p>
+      <p class="about__promise">No dark patterns. No microtransactions, no “wait or pay” timers, no ads.</p>
     </div>
-    <div class="card card--flush">
-      <div class="tool">
-        <div class="tool__copy">
-          <div class="tool__head">
-            <img class="tool__icon" src="assets/img/forge-logger-icon.png" width="40" height="40" alt="" loading="lazy">
-            <h3>Forge Logger</h3>
-          </div>
-          <p class="tool__lede">Your playtesters press one key, type what broke, and you get a structured bug report — with a screenshot and the exact scene, build, and environment it happened in.</p>
-          <ul class="tool__list">
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Free, MIT-licensed Godot 4 plugin</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>AI summaries, repro steps, dedupe</li>
-            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>One-click export to GitHub, Jira, GitLab</li>
-          </ul>
-          <div class="tool__actions">
-            <a class="btn btn--primary" href="https://forgelogger.dev/auth" target="_blank" rel="noopener noreferrer">Start free</a>
-            <a class="btn btn--secondary" href="https://forgelogger.dev/docs" target="_blank" rel="noopener noreferrer">View docs</a>
-          </div>
-        </div>
-        <div class="tool__shot">
-          <img src="assets/img/fl-dashboard.png" alt="Forge Logger dashboard showing recent bug reports, severity and build breakdowns" width="1600" height="1000" loading="lazy">
-        </div>
+    <div class="about__side">
+      <div>
+        <h3>Feedback &amp; contact</h3>
+        <p><a href="mailto:hello@stoneforgelabs.games">hello@stoneforgelabs.games</a></p>
+      </div>
+      <div>
+        <h3>Follow</h3>
+        <ul class="linklist">
+          <li><a href="https://stoneforgelabs.itch.io" target="_blank" rel="noopener noreferrer">itch.io</a></li>
+          <li><a href="https://bsky.app/profile/stoneforgelabs.games" target="_blank" rel="me noopener noreferrer">Bluesky</a></li>
+          <li><a href="https://www.youtube.com/@StoneForgeLabs" target="_blank" rel="me noopener noreferrer">YouTube</a></li>
+          <li><a href="https://www.instagram.com/stoneforgelabs.games/" target="_blank" rel="me noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@stoneforgelabs.games" target="_blank" rel="me noopener noreferrer">TikTok</a></li>
+          <li><a href="https://github.com/stoneforgelabs" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Also from the studio</h3>
+        <p><a href="https://forgelogger.dev" target="_blank" rel="noopener noreferrer">Forge Logger</a> — playtest bug reports for Godot games.</p>
       </div>
     </div>
-  </section>
-
-  <section class="wrap wrap--narrow section center statement">
-    <h2>No dark patterns. In games or tools.</h2>
-    <p>No microtransactions. No “wait 4 hours or pay”. No ads. Ever. Our games end when they're done, and our tools are yours to self-host.</p>
   </section>
 
 </main>
 
 <footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__brandcol">
-      <span class="footer__brand">StoneForge Labs</span>
-      <span>© 2026 StoneForge Labs. All rights reserved.</span>
-    </div>
-    <nav class="footer__links" aria-label="Our products">
-      <a href="https://store.steampowered.com/app/5077600/Marble_Mill/" target="_blank" rel="noopener noreferrer">Marble Mill on Steam</a>
-      <a href="https://forgelogger.dev" target="_blank" rel="noopener noreferrer">forgelogger.dev</a>
-      <a href="https://bsky.app/profile/forgelogger.dev" target="_blank" rel="noopener noreferrer">Forge Logger on Bluesky</a>
-      <a href="https://github.com/stoneforgelabs" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </nav>
-    <nav class="footer__links" aria-label="Follow us">
-      <a href="https://bsky.app/profile/stoneforgelabs.games" target="_blank" rel="me noopener noreferrer">Bluesky</a>
-      <a href="https://www.youtube.com/@StoneForgeLabs" target="_blank" rel="me noopener noreferrer">YouTube</a>
-      <a href="https://www.instagram.com/stoneforgelabs.games/" target="_blank" rel="me noopener noreferrer">Instagram</a>
-      <a href="https://www.tiktok.com/@stoneforgelabs.games" target="_blank" rel="me noopener noreferrer">TikTok</a>
-    </nav>
-  </div>
+  <p>© 2026 StoneForge Labs, s.r.o. · Nové sady 988/2, 602 00 Brno, Czechia</p>
+  <p>Company ID 24546844 · Registered with the Regional Court in Brno, file C 150379</p>
 </footer>
+</div>
 
+</div>
 </body>
 </html>
