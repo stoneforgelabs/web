@@ -5,6 +5,9 @@
  * zůstanou skrytá. Žádné cookies ani měřicí ID v prohlížeči: v localStorage je
  * jen „už jsem chtěl víc“ u hry, a to až po kliknutí. S Global Privacy Control
  * se události neposílají (hlas ano — je to výslovná akce návštěvníka).
+ *
+ * Z konce dema (F4) vede odkaz na /<hra>?utm_medium=ingame…#want-more: hlas
+ * z detailu té hry pak jde jako place „ingame“ a tlačítko se ukáže a zvýrazní.
  */
 (function () {
   var body = document.body;
@@ -20,6 +23,8 @@
     var params = new URLSearchParams(location.search);
     utm = { source: params.get('utm_source'), medium: params.get('utm_medium'), campaign: params.get('utm_campaign') };
   } catch (e) { /* starý prohlížeč: bez UTM */ }
+  // Přišel z konce dema hry, na jejíž stránce je — nejcennější hlas (plán HQ-17, 2.5).
+  var fromGame = utm.medium === 'ingame' && !!pageGame;
 
   function send(name, extra) {
     if (gpc) return;
@@ -102,6 +107,8 @@
   var wants = document.querySelectorAll('[data-want-more]');
   Array.prototype.forEach.call(wants, function (btn) {
     var slug = btn.getAttribute('data-want-more');
+    var place = btn.getAttribute('data-place');
+    if (fromGame && slug === pageGame && place === 'detail') place = 'ingame';
     btn.hidden = false;
     if (voted(slug)) setState(slug, 'done');
     btn.addEventListener('click', function () {
@@ -109,7 +116,7 @@
       setState(slug, 'busy');
       fetch(endpoint + '/v1/want-more', {
         method: 'POST',
-        body: JSON.stringify({ g: slug, p: btn.getAttribute('data-place'), r: ref, u: utm }),
+        body: JSON.stringify({ g: slug, p: place, r: ref, u: utm }),
         keepalive: true
       }).then(function (res) {
         if (!res.ok) throw new Error(String(res.status));
@@ -129,6 +136,18 @@
   });
   if (wants.length) {
     Array.prototype.forEach.call(document.querySelectorAll('[data-want-note]'), function (n) { n.hidden = false; });
+  }
+
+  // Z konce dema (#want-more): tlačítko bylo do teď skryté, takže prohlížeč na
+  // kotvu nesjel — dojeď na něj a zvýrazni ho, pokud ještě nehlasoval.
+  if (pageGame && (fromGame || location.hash === '#want-more')) {
+    var open = buttons(pageGame).filter(function (b) { return b.getAttribute('aria-pressed') !== 'true'; });
+    if (open.length) {
+      open.forEach(function (b) { b.classList.add('is-nudged'); });
+      var hint = document.querySelector('[data-want-note]');
+      if (hint) hint.textContent = 'Just played the demo? Tell us if you want more.';
+      if (location.hash === '#want-more' && open[0].scrollIntoView) open[0].scrollIntoView({ block: 'center' });
+    }
   }
 
   // Návrat z Play (hra se otevřela v nové kartě): drobné „Played it?“ u tlačítka.
