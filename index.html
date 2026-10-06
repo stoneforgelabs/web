@@ -20,14 +20,12 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/site.css">
 <script src="assets/js/menu.js" defer></script>
+<script src="assets/js/lab.js" defer></script>
 </head>
-<body>
+<body data-lab="https://stoneforge-lab.stoneforgelabs.workers.dev">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="shell">
@@ -42,6 +40,12 @@
     <ul class="rail__list">
       <li><a class="rail__link" href="#top" aria-current="page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11h4"/><path d="M8 9v4"/><path d="M15 12h.01"/><path d="M18 10h.01"/><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.59C2.6 9.42 2 14.46 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.41-1.41A2 2 0 0 1 9.83 16h4.34a2 2 0 0 1 1.41.59L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.55-.6-6.58-.69-7.26A4 4 0 0 0 17.32 5z"/></svg><span>Explore</span></a></li><li><a class="rail__link" href="#play"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.07-10.13A2 2 0 0 1 14 9.53V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg><span>Playable experiments</span></a></li><li><a class="rail__link" href="#development"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg><span>In development</span></a></li><li><a class="rail__link" href="#about"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>About</span></a></li>
     </ul>
+    <div class="rail__lab">
+      <p class="rail__eyebrow" id="rail-lab">In the lab</p>
+      <ul class="rail__games" aria-labelledby="rail-lab">
+        <li><a class="rail__game" href="lethal-geometry.html"><span class="sdot sdot--testing" aria-hidden="true"></span><span class="rail__gname">Lethal Geometry</span><span class="sr-only"> — Testing now</span></a></li><li><a class="rail__game" href="marble-mill.html"><span class="sdot sdot--in_development" aria-hidden="true"></span><span class="rail__gname">Marble Mill</span><span class="sr-only"> — In development</span></a></li><li><a class="rail__game" href="aim-down-go-up.html"><span class="sdot sdot--coming_next" aria-hidden="true"></span><span class="rail__gname">Aim Down, Go Up</span><span class="sr-only"> — Coming next</span></a></li>
+      </ul>
+    </div>
     <a class="rail__tool" href="https://forgelogger.dev" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 11 2-2-2-2"/><path d="M11 13h4"/><rect width="18" height="18" x="3" y="3" rx="2"/></svg><span>Forge Logger</span><svg class="rail__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg><span class="sr-only"> (playtest tool, opens in a new tab)</span></a>
   </nav>
 </header>
@@ -51,21 +55,25 @@
 <main id="main" class="main">
 
   <section class="intro" id="top" aria-labelledby="intro-title">
-    <div class="intro__grid" aria-hidden="true">
-      <p class="intro__steps">Ideas<br>Playtests<br>Feedback<br>Bigger games</p>
-    </div>
+    <div class="intro__grid" aria-hidden="true"></div>
     <h1 class="intro__title" id="intro-title"><span>Play the experiments.</span> <span class="intro__accent">Shape what comes next.</span></h1>
-    <p class="intro__lede">Small ideas. Some grow into full games.</p>
+    <p class="intro__lede">We build small games. You play them. The best ones grow.</p>
+    <div class="lab-loop">
+      <ol class="lab-loop__steps" aria-label="How the lab works">
+        <li>Build</li><li>Play</li><li>Learn</li><li>Select</li><li>Develop</li>
+      </ol>
+      <p class="lab-loop__note">What you play — and what you ask more of — helps us pick the few that grow.</p>
+    </div>
   </section>
 
 <!-- build_web:featured -->
 <section class="feature" id="play" aria-labelledby="feature-title">
   <img class="feature__art" src="assets/img/games/lethal-geometry-wide-1600.webp" srcset="assets/img/games/lethal-geometry-wide-960.webp 960w, assets/img/games/lethal-geometry-wide-1600.webp 1600w, assets/img/games/lethal-geometry-wide-2400.webp 2400w" sizes="(min-width: 1200px) min(1440px, calc(100vw - 288px)), (min-width: 900px) calc(100vw - 240px), 100vw" width="1600" height="517" alt="Lethal Geometry gameplay: a laser beam split by mirrors burns through a column of enemies on a dark grid" fetchpriority="high">
   <div class="feature__copy">
-    <p class="chip chip--play"><span class="chip__dot" aria-hidden="true"></span><span>Playable demo<span aria-hidden="true"> · </span>In development</span></p>
-    <h2 class="feature__title" id="feature-title">Lethal Geometry</h2>
+    <p class="chip chip--testing"><span class="chip__dot" aria-hidden="true"></span><span>Testing now</span></p>
+    <h2 class="feature__title" id="feature-title"><a class="feature__link" href="lethal-geometry.html">Lethal Geometry</a></h2>
     <p class="feature__tagline">A tower defense without towers. One laser, a machine of mirrors.</p>
-    <div class="actions"><a class="btn btn--play" href="https://stoneforgelabs.itch.io/lethal-geometry" target="_blank" rel="noopener noreferrer"><svg class="btn__glyph" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z" fill="currentColor"/></svg>Play demo<span class="sr-only"> of Lethal Geometry on itch.io</span></a><a class="btn btn--outline" href="https://store.steampowered.com/app/5325830/Lethal_Geometry/" target="_blank" rel="noopener noreferrer">Wishlist on Steam<span class="sr-only">: Lethal Geometry</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a><a class="textlink" href="mailto:hello@stoneforgelabs.games?subject=Feedback%3A%20Lethal%20Geometry">Leave feedback<span class="sr-only"> on Lethal Geometry by e-mail</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a></div>
+    <div class="actions"><a class="btn btn--play" href="https://stoneforgelabs.itch.io/lethal-geometry" target="_blank" rel="noopener noreferrer" data-game="mirror-defense" data-place="feature" data-dest="itch"><svg class="btn__glyph" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z" fill="currentColor"/></svg>Play demo<span class="sr-only"> of Lethal Geometry on itch.io</span></a><a class="btn btn--outline" href="https://store.steampowered.com/app/5325830/Lethal_Geometry/" target="_blank" rel="noopener noreferrer" data-game="mirror-defense" data-place="feature" data-kind="wishlist">Wishlist on Steam<span class="sr-only">: Lethal Geometry</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></div>
   </div>
 </section>
 <!-- /build_web:featured -->
@@ -80,17 +88,16 @@
   <div class="cards cards--single">
     <article class="game">
       <div class="game__media">
-        <div class="game__art art-placeholder" role="img" aria-label="Aim Down, Go Up: artwork coming later"><span>Aim Down, Go Up</span></div>
-        <p class="chip chip--dev chip--onimage"><span class="chip__dot" aria-hidden="true"></span><span>Experiment<span aria-hidden="true"> · </span>Demo coming next</span></p>
+        <a class="game__medialink" href="aim-down-go-up.html" tabindex="-1" aria-hidden="true"><img class="game__art" src="assets/img/games/aim-down-go-up-1280.webp" srcset="assets/img/games/aim-down-go-up-640.webp 640w, assets/img/games/aim-down-go-up-1280.webp 1280w" sizes="(min-width: 1200px) 420px, (min-width: 600px) 45vw, 100vw" width="1280" height="720" alt="Aim Down, Go Up: a small orange robot with a pistol stands in a dark station corridor next to a striped gravity field" loading="lazy" decoding="async"></a>
+        <p class="chip chip--coming_next chip--onimage"><span class="chip__dot" aria-hidden="true"></span><span>Coming next</span></p>
       </div>
       <div class="game__body">
-        <h3 class="game__title">Aim Down, Go Up</h3>
-        <p class="game__tagline">You can&#x27;t walk or jump. Every shot pushes you the other way.</p>
+        <h3 class="game__title"><a href="aim-down-go-up.html">Aim Down, Go Up</a></h3>
+        <p class="game__tagline">Every shot pushes you the other way.</p>
         
       </div>
     </article>
   </div>
-  
 </section>
 <section class="panel spotlight" id="development" aria-labelledby="spotlight-title">
   <div class="spotlight__head">
@@ -104,10 +111,10 @@
   <div class="spotlight__body">
     <div class="spotlight__titlerow">
       <h3 class="game__title"><a class="spotlight__link" href="marble-mill.html">Marble Mill<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span class="sr-only"> — about the game</span></a></h3>
-      <p class="chip chip--dev"><span class="chip__dot" aria-hidden="true"></span><span>In development</span></p>
+      <p class="chip chip--in_development"><span class="chip__dot" aria-hidden="true"></span><span>In development</span></p>
     </div>
     <p class="game__tagline">An idle game that ends. Every coin is a real collision.</p>
-    <div class="actions"><a class="btn btn--play" href="https://store.steampowered.com/app/5077600/Marble_Mill/" target="_blank" rel="noopener noreferrer"><svg class="btn__glyph" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z" fill="currentColor"/></svg>Play demo<span class="sr-only"> of Marble Mill on Steam</span></a><a class="btn btn--outline" href="https://store.steampowered.com/app/5077600/Marble_Mill/" target="_blank" rel="noopener noreferrer">Wishlist on Steam<span class="sr-only">: Marble Mill</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></div>
+    <div class="actions"><a class="btn btn--play" href="https://store.steampowered.com/app/5077600/Marble_Mill/" target="_blank" rel="noopener noreferrer" data-game="marble-mill" data-place="spotlight" data-dest="steam"><svg class="btn__glyph" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z" fill="currentColor"/></svg>Play demo<span class="sr-only"> of Marble Mill on Steam</span></a><a class="btn btn--outline" href="https://store.steampowered.com/app/5077600/Marble_Mill/" target="_blank" rel="noopener noreferrer" data-game="marble-mill" data-place="spotlight" data-kind="wishlist">Wishlist on Steam<span class="sr-only">: Marble Mill</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></div>
   </div>
 </section>
 </div>
@@ -120,6 +127,7 @@
     <div class="about__copy">
       <h2 id="about-title">An open lab for small games</h2>
       <p>StoneForge Labs is an independent game studio in Czechia. We put small playable ideas out early, listen to the people who play them, and keep building the ones that click.</p>
+      <p><strong>How we choose:</strong> what you play counts most, then Steam wishlists and how many of you ask for more. No single number decides — but we read every signal.</p>
       <p class="about__promise">No dark patterns. No microtransactions, no “wait or pay” timers, no ads.</p>
     </div>
     <div class="about__side">
@@ -148,7 +156,7 @@
 </main>
 
 <footer class="footer">
-  <p>© 2026 StoneForge Labs, s.r.o. · Nové sady 988/2, 602 00 Brno, Czechia</p>
+  <p>© 2026 StoneForge Labs, s.r.o. · Nové sady 988/2, 602 00 Brno, Czechia · <a href="privacy.html">Privacy</a></p>
   <p>Company ID 24546844 · Registered with the Regional Court in Brno, file C 150379</p>
 </footer>
 </div>
