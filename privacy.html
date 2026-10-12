@@ -48,6 +48,7 @@
 
     <h2>What we measure</h2>
     <p>When you open a page on this site, or click <strong>Play demo</strong>, <strong>Wishlist on Steam</strong>, <strong>I want more</strong>, <strong>Leave feedback</strong> or a link to another site, your browser sends us a small event: which page or game it was, which button, the website you came from and any campaign tags in the link (utm), and your country as our hosting provider sees it.</p>
+    <p>When you play a game right here on this site, the same kind of event also tells us that the game started loading, that it actually started, or that it couldn't start and roughly why (not on the site yet, the download failed, or the browser can't run it). Nothing from inside the game goes through these events.</p>
 
     <h2>How we count visitors without cookies</h2>
     <p>To tell visitors apart within one day, our server combines your IP address and browser type with a random value that changes every day, and keeps only the resulting short code. The random value is deleted after two days. We don't store your IP address, and we can't recognise you on another day or trace the code back to you.</p>
@@ -56,23 +57,29 @@
     <p>Only one thing, and only after you press <strong>I want more</strong>: a note in your browser's local storage that you already did, so the button stays checked. Nothing else is stored on your device.</p>
     <p>If your browser sends <strong>Global Privacy Control</strong>, we don't send any page or click events. <strong>I want more</strong> still counts, because you pressed it on purpose.</p>
 
+    <h2>Anonymous play stats in our games</h2>
+    <p>Our game demos can send <strong>anonymous play stats</strong>, so we can tell whether people actually play an experiment and how far they get. They are on by default and you can switch them off at any time with <strong>Anonymous play stats</strong> in the game's menu.</p>
+    <p>What a game sends: which game and version, the Godot engine version, demo or full game, the platform (web, Windows, Linux), the name of the current game screen, a random session code that exists only while the game is running and is new every time you start it, and simple events — the game started, a level started or was completed, a restart, the game finished — each with the time it happened. A short signal every 30 seconds tells us how long a session lasted.</p>
+    <p>What it doesn't send: no player or device ID, no name or account, nothing about your computer. The stats go to <strong>Forge Logger</strong>, our studio's own game analytics service; it doesn't store IP addresses (it looks at one only for a moment, to stop abuse), so we can't tell whether two sessions came from the same person. The only thing the stats save on your device (or in your browser, for games played on the web) is your choice when you switch them off, so they stay off next time.</p>
+
     <h2>Who handles the data</h2>
     <ul>
-      <li><strong>Cloudflare</strong> runs our small counting service and its database on our behalf.</li>
-      <li><strong>GitHub Pages</strong> hosts the site itself. GitHub logs visitors' IP addresses for security purposes, under GitHub's own privacy statement.</li>
+      <li><strong>Cloudflare</strong> runs our small counting service for this site and its database on our behalf.</li>
+      <li><strong>Google Cloud</strong> runs Forge Logger, which receives the play stats from our games, in its Netherlands region (europe-west4) on our behalf.</li>
+      <li><strong>GitHub Pages</strong> hosts the site itself, including the files of the games you can play here. GitHub logs visitors' IP addresses for security purposes, under GitHub's own privacy statement.</li>
       <li>Fonts and images come from this site, not from anyone else. Links to itch.io, Steam and social networks take you to their own sites and their own privacy rules.</li>
     </ul>
 
     <h2>How long we keep it</h2>
-    <p>Individual events for 400 days, then they are deleted. Daily totals — numbers only, no codes and no IP addresses — we keep as part of our studio's records.</p>
+    <p>Individual events on this site for 400 days, individual play sessions and their events from our games for up to a year, then they are deleted. Daily totals — numbers only, no codes and no IP addresses — we keep as part of our studio's records.</p>
 
     <h2>Why</h2>
-    <p>It is our legitimate interest to know which game experiments people play and want more of, and how they find us (GDPR Art. 6(1)(f)). The note in your browser is strictly necessary for the button you pressed.</p>
+    <p>It is our legitimate interest to know which game experiments people play and want more of, and how they find us (GDPR Art. 6(1)(f)). The note in your browser is strictly necessary for the button you pressed, and the saved off switch in a game only remembers the choice you made.</p>
 
     <h2>Your rights and contact</h2>
     <p>You can ask us for access, erasure or object to the processing at <a href="mailto:hello@stoneforgelabs.games">hello@stoneforgelabs.games</a>. Because we don't keep anything that links to you, we usually can't find data that is "yours" — but write to us and we will check. You can also complain to the Czech data protection authority, <a href="https://uoou.gov.cz/en" target="_blank" rel="noopener noreferrer">Úřad pro ochranu osobních údajů</a>.</p>
     <p>Controller: StoneForge Labs, s.r.o., Nové sady 988/2, 602 00 Brno, Czechia, Company ID 24546844.</p>
-    <p class="doc__updated">Last updated 6 October 2026.</p>
+    <p class="doc__updated">Last updated 11 October 2026.</p>
   </article>
 
 </main>

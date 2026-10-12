@@ -37,7 +37,10 @@
     fetch(endpoint + '/v1/e', { method: 'POST', body: data, keepalive: true, mode: 'no-cors' }).catch(function () {});
   }
 
-  send('view', { g: pageGame });
+  // Přehrávač (play.js) posílá vlastní události přes window.sflLab; jeho stránka
+  // se nepočítá jako zobrazení stránky hry.
+  window.sflLab = { send: send };
+  if (!body.hasAttribute('data-player-page')) send('view', { g: pageGame });
 
   // ------------------------------------------------------------ kliky ven
   var playedGame = null;
@@ -53,10 +56,11 @@
       return;
     }
     var host = a.hostname;
-    if (a.classList.contains('btn--play')) {
+    if (a.classList.contains('btn--play') || a.hasAttribute('data-play')) {
       var dest = a.getAttribute('data-dest') || (host === 'store.steampowered.com' ? 'steam' : 'itch');
       send('play', { g: game, p: place, d: dest });
-      playedGame = game;
+      // Hra na webu se otevře v téhle kartě — „Played it?“ po návratu patří jen novým kartám.
+      if (dest !== 'web') playedGame = game;
       return;
     }
     if (host === 'store.steampowered.com') {

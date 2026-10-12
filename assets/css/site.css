@@ -684,3 +684,68 @@ button.btn { cursor: pointer; }
   .stage-track__step { flex-direction: row; align-items: center; gap: 12px; min-height: 34px; }
   .stage-track__step::before { top: 50%; left: 6px; right: auto; width: 1px; height: 100%; }
 }
+
+/* ============ player — hraní přímo na webu (/play/<hra>) ============ */
+/* Celá obrazovka patří hře: tenká lišta nahoře, pod ní plátno. Stránka neroluje,
+   takže šipky a mezerník jdou jen do hry. */
+.player-page { height: 100%; overflow: hidden; background: #000; }
+html:has(.player-page) { height: 100%; }
+.player {
+  display: grid; grid-template-rows: auto minmax(0, 1fr);
+  height: 100vh; height: 100dvh;
+  padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+.player__bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  min-height: 52px; padding: 4px 12px;
+  background: var(--sf-rail); border-bottom: 1px solid var(--sf-border-subtle);
+}
+.player__back {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; min-width: 0;
+  padding: 0 8px; border-radius: var(--sf-radius-control);
+  color: var(--sf-text); font: 600 15px/1.2 var(--font-display);
+}
+.player__back svg { flex: none; color: var(--sf-text-secondary); }
+.player__back:hover { background: var(--sf-surface-hover); color: var(--sf-text); }
+.player__back-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.player__tools { display: flex; align-items: center; gap: 4px; flex: none; }
+.player__tools .btn--want { min-height: 40px; }
+.player__next, .player__fs {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 12px;
+  border: 1px solid transparent; border-radius: var(--sf-radius-control);
+  background: transparent; color: var(--sf-text-secondary);
+  font: 600 14.5px/1.2 var(--font-body); white-space: nowrap; cursor: pointer;
+}
+.player__next:hover, .player__fs:hover { border-color: var(--sf-border); color: var(--sf-text); }
+.player__fs[hidden] { display: none; }
+.player__stage { position: relative; min-height: 0; background: #000; overflow: hidden; }
+.player__stage:fullscreen { width: 100vw; height: 100vh; }
+.player__canvas { display: block; width: 100%; height: 100%; outline: none; touch-action: none; }
+.player__overlay {
+  position: absolute; inset: 0; display: grid; place-items: center; padding: 16px;
+  background: radial-gradient(ellipse at center, rgba(17, 23, 43, .92), rgba(8, 12, 24, .98)) center / cover no-repeat;
+}
+.player__overlay[hidden] { display: none; }
+.player__card {
+  width: min(440px, 100%); padding: 24px;
+  border: 1px solid var(--sf-border-subtle); border-radius: var(--sf-radius-panel);
+  background: rgba(11, 16, 32, .88); text-align: left;
+}
+.player__eyebrow { margin: 0; color: var(--sf-text-muted); font: 600 12px/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; }
+.player__title { margin: 6px 0 0; font-size: 26px; line-height: 1.15; }
+.player__state[hidden] { display: none; }
+.player__msg { margin: 14px 0 0; color: var(--sf-text); font-weight: 600; }
+.player__hint { margin: 6px 0 0; color: var(--sf-text-secondary); font-size: 14.5px; white-space: pre-line; }
+.player__hint:empty { display: none; }
+.player__bar-track { height: 6px; margin-top: 14px; border-radius: 3px; background: var(--sf-surface-hover); overflow: hidden; }
+.player__bar-fill { width: 0; height: 100%; border-radius: 3px; background: var(--sf-play); transition: width 200ms linear; }
+.player__bar-fill.is-indeterminate { width: 35%; animation: sf-indeterminate 1.2s var(--sf-ease) infinite; }
+@keyframes sf-indeterminate { 0% { transform: translateX(-100%); } 100% { transform: translateX(290%); } }
+@media (prefers-reduced-motion: reduce) { .player__bar-fill.is-indeterminate { animation: none; width: 100%; opacity: .5; } }
+.player__noscript { position: absolute; inset: auto 16px 16px; color: var(--sf-text); }
+@media (max-width: 640px) {
+  .player__bar { min-height: 48px; padding: 2px 6px; gap: 4px; }
+  .player__next-label, .player__fs-label { display: none; }
+  .player__tools .btn--want .btn__label { display: none; }
+  .player__tools .btn--want[aria-pressed="true"] svg { display: inline; }
+}
