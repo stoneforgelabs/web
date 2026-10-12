@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- Vygenerováno scripts/build_web.py z data/web_games.json — ručně neupravovat. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Play Marble Mill — StoneForge Labs</title>
+<meta name="description" content="Play the Marble Mill demo in your browser. An idle game that ends. Every coin is a real collision.">
+<link rel="canonical" href="https://stoneforgelabs.games/play/marble-mill.html">
+<meta name="theme-color" content="#0b1020">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StoneForge Labs">
+<meta property="og:title" content="Play Marble Mill in your browser">
+<meta property="og:description" content="An idle game that ends. Every coin is a real collision.">
+<meta property="og:url" content="https://stoneforgelabs.games/play/marble-mill.html">
+<meta property="og:image" content="https://stoneforgelabs.games/assets/img/lethal-geometry-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/tokens.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script src="/assets/js/lab.js" defer></script>
+<script src="/assets/js/play.js" defer></script>
+</head>
+<body class="player-page" data-game="marble-mill" data-player-page data-lab="https://stoneforge-lab.stoneforgelabs.workers.dev">
+<div class="player" data-player data-builds="/builds/" data-touch="0" data-title="Marble Mill" data-art="/assets/img/games/marble-mill-rings-1280.webp">
+  <header class="player__bar">
+    <a class="player__back" href="/marble-mill.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span class="player__back-label">Marble Mill</span><span class="sr-only"> — back to the game page</span></a>
+    <div class="player__tools">
+      <button class="btn btn--want btn--quiet" type="button" data-want-more="marble-mill" data-place="player" aria-pressed="false" hidden><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg><span class="btn__label">I want more</span><span class="sr-only">: Marble Mill</span></button>
+      <a class="player__next" href="/#play"><span class="player__next-label">More </span>experiments<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <button class="player__fs" type="button" data-fullscreen hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg><span class="player__fs-label">Fullscreen</span></button>
+    </div>
+  </header>
+  <main class="player__stage" data-stage>
+    <canvas id="canvas" class="player__canvas" tabindex="0" aria-label="Marble Mill — game"></canvas>
+    <div class="player__overlay" data-overlay>
+      <div class="player__card" role="status" aria-live="polite">
+        <p class="player__eyebrow">StoneForge Labs · experiment</p>
+        <h1 class="player__title">Marble Mill</h1>
+        <div class="player__state" data-state="loading">
+          <p class="player__msg" data-msg>Loading the game…</p>
+          <div class="player__bar-track" aria-hidden="true"><div class="player__bar-fill" data-progress></div></div>
+          <p class="player__hint" data-hint>Downloads once, then starts right here.</p>
+        </div>
+        <div class="player__state" data-state="touch" hidden>
+          <p class="player__msg">This experiment is made for a keyboard and mouse.</p>
+          <p class="player__hint">On a phone or tablet it may not be playable. The download is about <span data-size>10 MB</span>.</p>
+          <div class="actions"><button class="btn btn--play" type="button" data-start><svg class="btn__glyph" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z" fill="currentColor"/></svg>Try anyway</button></div>
+        </div>
+        <div class="player__state" data-state="ended" hidden>
+          <p class="player__msg">Thanks for playing.</p>
+          <div class="actions"><button class="btn btn--play" type="button" data-retry><svg class="btn__glyph" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z" fill="currentColor"/></svg>Play again</button></div>
+        </div>
+        <div class="player__state" data-state="error" hidden>
+          <p class="player__msg" data-error-msg>The game didn't start.</p>
+          <p class="player__hint" data-error-detail></p>
+          <div class="actions"><button class="btn btn--play" type="button" data-retry>Try again</button><a class="btn btn--outline" href="https://stoneforgelabs.itch.io/marble-mill" target="_blank" rel="noopener noreferrer" data-game="marble-mill" data-place="player" data-dest="itch">Play on itch.io<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></div>
+        </div>
+      </div>
+    </div>
+    <noscript><p class="player__noscript">The game needs JavaScript. <a href="/marble-mill.html">Back to Marble Mill</a></p></noscript>
+  </main>
+</div>
+</body>
+</html>
