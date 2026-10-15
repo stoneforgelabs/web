@@ -31,7 +31,7 @@
     <div class="rail__lab">
       <p class="rail__eyebrow" id="rail-lab">In the lab</p>
       <ul class="rail__games" aria-labelledby="rail-lab">
-        <li><a class="rail__game" href="lethal-geometry.html"><span class="sdot sdot--testing" aria-hidden="true"></span><span class="rail__gname">Lethal Geometry</span><span class="sr-only"> — Testing now</span></a></li><li><a class="rail__game" href="marble-mill.html"><span class="sdot sdot--in_development" aria-hidden="true"></span><span class="rail__gname">Marble Mill</span><span class="sr-only"> — In development</span></a></li><li><a class="rail__game" href="aim-down-go-up.html"><span class="sdot sdot--coming_next" aria-hidden="true"></span><span class="rail__gname">Aim Down, Go Up</span><span class="sr-only"> — Coming next</span></a></li>
+        <li><a class="rail__game" href="lethal-geometry.html"><span class="sdot sdot--testing" aria-hidden="true"></span><span class="rail__gname">Lethal Geometry</span><span class="sr-only"> — Testing now</span></a></li><li><a class="rail__game" href="marble-mill.html"><span class="sdot sdot--in_development" aria-hidden="true"></span><span class="rail__gname">Marble Mill</span><span class="sr-only"> — In development</span></a></li>
       </ul>
     </div>
     <a class="rail__tool" href="https://forgelogger.dev" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 11 2-2-2-2"/><path d="M11 13h4"/><rect width="18" height="18" x="3" y="3" rx="2"/></svg><span>Forge Logger</span><svg class="rail__ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg><span class="sr-only"> (playtest tool, opens in a new tab)</span></a>
@@ -60,12 +60,15 @@
     <h2>Anonymous play stats in our games</h2>
     <p>Our game demos can send <strong>anonymous play stats</strong>, so we can tell whether people actually play an experiment and how far they get. They are on by default and you can switch them off at any time with <strong>Anonymous play stats</strong> in the game's menu.</p>
     <p>What a game sends: which game and version, the Godot engine version, demo or full game, the platform (web, Windows, Linux), the name of the current game screen, a random session code that exists only while the game is running and is new every time you start it, and simple events — the game started, a level started or was completed, a restart, the game finished — each with the time it happened. A short signal every 30 seconds tells us how long a session lasted.</p>
-    <p>What it doesn't send: no player or device ID, no name or account, nothing about your computer. The stats go to <strong>Forge Logger</strong>, our studio's own game analytics service; it doesn't store IP addresses (it looks at one only for a moment, to stop abuse), so we can't tell whether two sessions came from the same person. The only thing the stats save on your device (or in your browser, for games played on the web) is your choice when you switch them off, so they stay off next time.</p>
+    <p>What it doesn't send: no player or device ID, no name or account, nothing about your computer. The stats go to <strong>Forge Logger</strong>, our studio's own game analytics service; it doesn't store IP addresses (it looks at one only for a moment, to stop abuse), so we can't tell whether two sessions came from the same person. The stats save your choice on your device (or in your browser, for games played on the web) when you switch them off, so they stay off next time.</p>
+
+    <h2>Bug reports from our games</h2>
+    <p>If something goes wrong, <strong>Report a bug</strong> in the game's menu (or the F8 key) opens a short form. Nothing is sent until you press Submit. A report contains what you write, the game and version, the platform, the name of the current game screen, simple performance numbers (frame rate, memory) and how long the game has been running, and the game's log only if you tick <strong>Attach logs</strong>. It goes to <strong>Forge Logger</strong> with the same random session code as the stats; it works even with the stats switched off, because you send it on purpose. To keep a report that couldn't be sent yet and to notice when the game closed unexpectedly, the game keeps a few small technical files on your device (the session code, unsent reports) and nothing about you.</p>
 
     <h2>Who handles the data</h2>
     <ul>
       <li><strong>Cloudflare</strong> runs our small counting service for this site and its database on our behalf.</li>
-      <li><strong>Google Cloud</strong> runs Forge Logger, which receives the play stats from our games, in its Netherlands region (europe-west4) on our behalf.</li>
+      <li><strong>Google Cloud</strong> runs Forge Logger, which receives the play stats and bug reports from our games, in its Netherlands region (europe-west4) on our behalf.</li>
       <li><strong>GitHub Pages</strong> hosts the site itself, including the files of the games you can play here. GitHub logs visitors' IP addresses for security purposes, under GitHub's own privacy statement.</li>
       <li>Fonts and images come from this site, not from anyone else. Links to itch.io, Steam and social networks take you to their own sites and their own privacy rules.</li>
     </ul>
@@ -79,7 +82,7 @@
     <h2>Your rights and contact</h2>
     <p>You can ask us for access, erasure or object to the processing at <a href="mailto:hello@stoneforgelabs.games">hello@stoneforgelabs.games</a>. Because we don't keep anything that links to you, we usually can't find data that is "yours" — but write to us and we will check. You can also complain to the Czech data protection authority, <a href="https://uoou.gov.cz/en" target="_blank" rel="noopener noreferrer">Úřad pro ochranu osobních údajů</a>.</p>
     <p>Controller: StoneForge Labs, s.r.o., Nové sady 988/2, 602 00 Brno, Czechia, Company ID 24546844.</p>
-    <p class="doc__updated">Last updated 11 October 2026.</p>
+    <p class="doc__updated">Last updated 14 October 2026.</p>
   </article>
 
 </main>
