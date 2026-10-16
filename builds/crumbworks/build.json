@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "game": "crumbworks",
+  "version": "0.1.2",
+  "engine": "a08de66e6e0ae454",
+  "pck": "0.1.2/game.pck",
+  "splash": "0.1.2/splash.png",
+  "sizes": {
+    "wasm": 39514754,
+    "pck": 10550272
+  },
+  "config": {
+    "args": [],
+    "canvasResizePolicy": 2,
+    "experimentalVK": false,
+    "focusCanvas": true,
+    "emscriptenPoolSize": 8,
+    "godotPoolSize": 4
+  },
+  "previous": null,
+  "source": {
+    "repo": "stoneforgelabs/crumbworks",
+    "sha": "f973edae4b3c91840cc515d19a1a688f54cf40c7",
+    "ref": "demo-v0.1.2"
+  },
+  "deployed_at": "2026-10-16T18:24:28+00:00"
+}
