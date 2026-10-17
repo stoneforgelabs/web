@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "game": "mirror-defense",
+  "version": "0.6.0",
+  "engine": "a08de66e6e0ae454",
+  "pck": "0.6.0/game.pck",
+  "splash": "0.6.0/splash.png",
+  "sizes": {
+    "wasm": 39514754,
+    "pck": 7724960
+  },
+  "config": {
+    "args": [],
+    "canvasResizePolicy": 2,
+    "experimentalVK": false,
+    "focusCanvas": true,
+    "emscriptenPoolSize": 8,
+    "godotPoolSize": 4
+  },
+  "previous": null,
+  "source": {
+    "repo": "stoneforgelabs/mirror-defense",
+    "sha": "db9de326004d2abdf14ba6110413bfe19390ee13",
+    "ref": "demo-v0.6.0"
+  },
+  "deployed_at": "2026-10-17T09:50:36+00:00"
+}
