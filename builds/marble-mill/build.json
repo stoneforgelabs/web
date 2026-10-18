@@ -1,13 +1,13 @@
 {
   "schema": 1,
   "game": "marble-mill",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engine": "16304e732ec9be03",
-  "pck": "1.0.1/game.pck",
-  "splash": "1.0.1/splash.png",
+  "pck": "1.0.2/game.pck",
+  "splash": "1.0.2/splash.png",
   "sizes": {
     "wasm": 39513091,
-    "pck": 683320
+    "pck": 701640
   },
   "config": {
     "args": [],
@@ -17,7 +17,14 @@
     "emscriptenPoolSize": 8,
     "godotPoolSize": 4
   },
-  "previous": null,
-  "source": {},
-  "deployed_at": "2026-10-12T04:40:20+00:00"
+  "previous": {
+    "version": "1.0.1",
+    "engine": "16304e732ec9be03"
+  },
+  "source": {
+    "repo": "stoneforgelabs/marble-mill",
+    "sha": "55e2871eff9172c28bfefaa8fcad541926af5762",
+    "ref": "demo-v1.0.2"
+  },
+  "deployed_at": "2026-10-18T07:08:12+00:00"
 }
