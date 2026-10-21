@@ -340,6 +340,19 @@ button.btn { cursor: pointer; }
   display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2;
   -webkit-box-orient: vertical; overflow: hidden;
 }
+/* karty v mřížce: obrázek, název, popisek a tlačítka jsou v celé řadě karet na stejné
+   výšce, i když má popisek jeden řádek a vedlejší dva (subgrid; bez něj tok jako dřív) */
+@supports (grid-template-rows: subgrid) {
+  .cards:not(.cards--single) > .game, .catalog__grid > .game, .more-lab__grid > .game {
+    display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0;
+  }
+  .cards:not(.cards--single) > .game .game__body,
+  .catalog__grid > .game .game__body,
+  .more-lab__grid > .game .game__body { display: contents; }
+  .cards:not(.cards--single) > .game .game__body > *,
+  .catalog__grid > .game .game__body > *,
+  .more-lab__grid > .game .game__body > * { align-self: start; }
+}
 
 /* jediná karta: obrázek vlevo, text vpravo, aby panel nebyl poloprázdný */
 .cards--single { grid-template-columns: minmax(0, 1fr); flex: 1; align-content: center; }
