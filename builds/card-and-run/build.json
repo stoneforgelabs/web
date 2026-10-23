@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "game": "card-and-run",
+  "version": "0.1.2",
+  "engine": "a08de66e6e0ae454",
+  "pck": "0.1.2/game.pck",
+  "splash": "0.1.2/splash.png",
+  "sizes": {
+    "wasm": 39514754,
+    "pck": 16913716
+  },
+  "config": {
+    "args": [],
+    "canvasResizePolicy": 2,
+    "experimentalVK": false,
+    "focusCanvas": true,
+    "emscriptenPoolSize": 8,
+    "godotPoolSize": 4
+  },
+  "previous": null,
+  "source": {
+    "repo": "stoneforgelabs/card-and-run",
+    "sha": "373c6fdce9e1198f69c9d2ffb56a4729386c8440",
+    "ref": "demo-v0.1.2"
+  },
+  "deployed_at": "2026-10-23T12:38:07+00:00"
+}
