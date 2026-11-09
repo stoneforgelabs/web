@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OrderPace help</title>
+<meta name="description" content="Set up OrderPace, the Shopify app that limits made-to-order pickup dates to what your kitchen can make.">
+<link rel="canonical" href="https://stoneforgelabs.games/orderpace/help/">
+<meta name="theme-color" content="#203D37">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/orderpace.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../"><img src="../assets/icon.svg" alt="" width="32" height="32">OrderPace</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../">Overview</a></li>
+        <li><a href="./" aria-current="page">Help</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <h1>Help</h1>
+  <p class="lede">How to set up OrderPace and what to expect from it.</p>
+  <p class="updated">Updated <time datetime="2026-11-08">8 November 2026</time></p>
+
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">Contents</h2>
+    <ol>
+      <li><a href="#setup">Setup</a></li>
+      <li><a href="#units">Effort units</a></li>
+      <li><a href="#daily">Daily use</a></li>
+      <li><a href="#capacity-product">The capacity product</a></li>
+      <li><a href="#limits">Limits</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#turn-off">Turning off and uninstalling</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="setup">Setup</h2>
+  <p>The app's home page has the same four steps and marks each one Done.</p>
+  <ol class="steps">
+    <li>
+      <strong>Schedule.</strong> Enter how many units you can make on each weekday. Use 0 for days you're closed. Then set:
+      <ul>
+        <li><strong>Minimum notice</strong>: how many days ahead customers must order. 0 allows same-day pickup.</li>
+        <li><strong>Daily order cut-off</strong>: after this time, the earliest pickup day moves one day later. It uses your store's time zone.</li>
+        <li><strong>Booking horizon</strong>: how far ahead customers can book.</li>
+      </ul>
+    </li>
+    <li><strong>Products.</strong> Add the products you make to order and give them effort units. You can change units per variant later.</li>
+    <li><strong>Theme.</strong> Open the theme editor from the app, add the <strong>Pickup date</strong> block to your product template and save.</li>
+    <li><strong>Test order.</strong> Pick a date on a product, check out, and make sure the order shows up on that day in <strong>Calendar</strong>.</li>
+  </ol>
+
+  <h2 id="units">Effort units</h2>
+  <p>Units tell the app how much of your day a product takes. You pick the numbers. They don't have to match hours.</p>
+  <div class="card">
+    <p>Example: a mini cake is 3 units, a birthday cake 8, a wedding cake 15. With 30 units a day, one of each leaves 4 units free.</p>
+  </div>
+  <p>All products you add share the same daily total. Quantity counts, so two birthday cakes take 16 units.</p>
+
+  <h2 id="daily">Daily use</h2>
+  <h3>Home</h3>
+  <p>Shows the next 14 days: units booked, units left and a status (Open, Full, Closed, Within notice, Ordering closed). <strong>Needs attention</strong> lists things to check, such as an order that skipped the online checkout.</p>
+  <h3>Calendar</h3>
+  <p>Open a day to see its orders and units. You can change that day's units, close it, or add a note only you can see.</p>
+  <p>Lowering or closing a day doesn't cancel orders you've already taken.</p>
+  <h3>Check now</h3>
+  <p>Compares each day's units with your recent orders. The app also does this once a day.</p>
+  <h3>Recent changes</h3>
+  <p>The Schedule page lists recent changes to your settings.</p>
+
+  <h2 id="capacity-product">The capacity product</h2>
+  <p>The app adds a product called <strong>Production capacity (DateCapacity Guard)</strong> to your store. It has one variant per pickup date, costs 0, and its stock is that day's free units. When a customer adds a cake, the matching units go into the cart with it. Checkout won't go through if the day has run out.</p>
+  <div class="note">
+    <p><strong>Don't delete, unpublish or edit this product.</strong> It has to stay on the Online Store for checkout to work. It's hidden from search engines. If you use automated collections or product feeds, leave it out of them.</p>
+  </div>
+
+  <h2 id="limits">Limits</h2>
+  <p>Only orders placed through the Online Store checkout are checked. These are not:</p>
+  <ul>
+    <li>orders created or edited by staff, including draft orders</li>
+    <li>POS orders</li>
+    <li>orders created by other apps</li>
+  </ul>
+  <p>The app lists them under Needs attention when it finds them, but it can't block them. For phone orders, check the units left for that day first.</p>
+  <p>OrderPace works with one kitchen and one daily total. It doesn't plan deliveries, staff or several locations.</p>
+
+  <h2 id="faq">FAQ</h2>
+
+  <details>
+    <summary>What does the customer see?</summary>
+    <div><p>A calendar on the product page. Days that are full, closed, too soon or past the cut-off can't be picked. Full days say Fully booked. If a day fills up while they shop, they're asked to pick another one.</p></div>
+  </details>
+
+  <details>
+    <summary>Does it work with Shop Pay, Apple Pay or other express buttons?</summary>
+    <div><p>We haven't tested these yet. The app hides the Buy it now button on your made-to-order products so customers go through the cart. Contact us before you rely on express checkout.</p></div>
+  </details>
+
+  <details>
+    <summary>Can I keep my current date picker app?</summary>
+    <div><p>We haven't tested OrderPace with other date picker apps, and the two won't share data. Contact us before using both on the same products.</p></div>
+  </details>
+
+  <details>
+    <summary>Can customers pick a time?</summary>
+    <div><p>No, only a date.</p></div>
+  </details>
+
+  <details>
+    <summary>Does the app store customer data?</summary>
+    <div><p>No. For each order it keeps the order ID and number, the pickup date and the units. No names, emails, phone numbers or addresses. See the <a href="../privacy/">privacy policy</a>.</p></div>
+  </details>
+
+  <details>
+    <summary>What languages does the date picker use?</summary>
+    <div><p>Its messages are in English. Month and day names follow your storefront's language. Today and the cut-off use your store's time zone.</p></div>
+  </details>
+
+  <h2 id="turn-off">Turning off and uninstalling</h2>
+  <p>To pause the app, go to <strong>Schedule</strong> and click <strong>Turn off</strong>. Checkout stops checking dates, the capacity product goes to draft and the date picker disappears. Your settings stay. <strong>Turn on</strong> brings everything back.</p>
+  <div class="note">
+    <p><strong>Turn the app off before you uninstall it.</strong> Once uninstalled, the app can't clean up your store. After uninstalling, remove the Pickup date block from your theme and delete the capacity product.</p>
+  </div>
+  <p>When you uninstall, we delete your store's data. See <a href="../privacy/#retention">data retention</a>.</p>
+
+  <h2 id="contact">Contact</h2>
+  <div class="card">
+    <p>Email <a href="mailto:support@stoneforgelabs.games?subject=OrderPace">support@stoneforgelabs.games</a> with your store's .myshopify.com address. Don't send passwords or customer details.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p>OrderPace is made by StoneForge Labs, s.r.o., Nové sady 988/2, 602 00 Brno, Czechia. Company ID 24546844.</p>
+    <p><a href="../privacy/">Privacy</a> · <a href="./">Help</a> · <a href="https://stoneforgelabs.games/">StoneForge Labs</a></p>
+    <p>Shopify is a trademark of Shopify Inc. OrderPace is not made by Shopify.</p>
+  </div>
+</footer>
+</body>
+</html>
