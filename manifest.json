@@ -1,0 +1,19 @@
+{
+  "_note": "Kdy se který klip dostal do větve (UTC) — scripts/make_clips.py podle toho drží klipy návrhů, které čekají na schválení.",
+  "files": {
+    "aim-down-go-up-launch-16x9-1920x1080.mp4": "2026-10-30T14:12:32Z",
+    "aim-down-go-up-launch-16x9-1920x1080.sheet.png": "2026-10-30T14:12:32Z",
+    "aim-down-go-up-launch-9x16-1080x1920.mp4": "2026-10-30T14:12:32Z",
+    "aim-down-go-up-launch-9x16-1080x1920.sheet.png": "2026-10-30T14:12:32Z",
+    "armored-shield-9x16-1080x1920.mp4": "2026-11-12T06:12:02Z",
+    "armored-shield-9x16-1080x1920.sheet.png": "2026-11-12T06:12:02Z",
+    "crossfire-switches-w7-late-16x9-1920x1080.mp4": "2026-11-09T00:16:31Z",
+    "crossfire-switches-w7-late-16x9-1920x1080.sheet.png": "2026-11-09T00:16:31Z",
+    "crossfire-switches-w7-late-9x16-1080x1920.mp4": "2026-11-09T00:16:31Z",
+    "crossfire-switches-w7-late-9x16-1080x1920.sheet.png": "2026-11-09T00:16:31Z",
+    "follow-the-swarm-w6-9x16-1080x1920.mp4": "2026-11-05T06:16:42Z",
+    "follow-the-swarm-w6-9x16-1080x1920.sheet.png": "2026-11-05T06:16:42Z",
+    "late-wave-relay-w8-16x9-1920x1080.mp4": "2026-11-09T00:16:31Z",
+    "late-wave-relay-w8-16x9-1920x1080.sheet.png": "2026-11-09T00:16:31Z"
+  }
+}
